@@ -27,7 +27,7 @@ document
   });
 
 function sendDataToCRM(firstName, lastName, email, phoneNumber) {
-  const formData = {
+  const data = {
     FirstName: firstName,
     LastName: lastName,
     Email: email,
@@ -41,17 +41,26 @@ function sendDataToCRM(firstName, lastName, email, phoneNumber) {
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
-    body: JSON.stringify(formData),
+    body: encodeFormData(data),
   })
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      alert("Success");
+      if (data.ret_code === "200") alert("Success");
+      else alert(data.ret_message);
     })
     .catch((error) => {
       console.error("Error:", error);
       alert("Error");
     });
+}
+
+function encodeFormData(data) {
+  const formData = new URLSearchParams();
+  for (const key in data) {
+    formData.append(key, data[key]);
+  }
+  return formData.toString();
 }
 
 function isValidEmail(email) {
