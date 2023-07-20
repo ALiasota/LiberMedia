@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="header">
+    <p class="text"><span class="header-timer"></span> TIME LEFT FOR LAST REGISTRATIONS</p>
+  </header>
+
+  <main>
+    <section class="contact-form">
+      <h2>Contact Us</h2>
+      <form class="form" id="contactForm">
+        <div class="input-cont">
+            <input class="form-input" type="text" id="firstName" name="firstName" placeholder="First Name" required>
+        </div>
+        
+        <div class="input-cont">
+            <input class="form-input" type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+        </div>
+        
+        <div class="input-cont">
+            <input class="form-input" type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+        
+        <div class="input-cont">
+            <select class="form-select" id="phoneCountryCode" name="phoneCountryCode">
+                <option value="+44">UK</option>
+                <option value="+1">CA</option>
+                <option value="+61">AU</option>
+            </select>
+            <input class="form-input" type="text" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" placeholder="XXX-XXX-XXXX" required>
+        </div>
+        
+        <button class="form-button" type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <p class="text"><span class="footer-clock"></span>REGISTER SECURELY NOW</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
